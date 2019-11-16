@@ -1,5 +1,7 @@
+using Liverpool.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -13,11 +15,14 @@ namespace Liverpool
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<LiverpoolContext>(new DropCreateDatabaseIfModelChanges<LiverpoolContext>());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            
+
         }
     }
 }

@@ -20,6 +20,7 @@ namespace Liverpool.Models
         public string Name { get; set; }
         public double Price { get; set; }
         public string Sex { get; set; }
+        public string Image{ get; set;}
 
 
 

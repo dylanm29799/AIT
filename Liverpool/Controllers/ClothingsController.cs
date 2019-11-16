@@ -46,7 +46,7 @@ namespace Liverpool.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ClothingID,Name,Price,Sex")] Clothing clothing)
+        public ActionResult Create([Bind(Include = "ClothingID,Name,Price,Sex,Image")] Clothing clothing)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Liverpool.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClothingID,Name,Price,Sex")] Clothing clothing)
+        public ActionResult Edit([Bind(Include = "ClothingID,Name,Price,Sex,Image")] Clothing clothing)
         {
             if (ModelState.IsValid)
             {
