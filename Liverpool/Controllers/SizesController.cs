@@ -10,107 +10,107 @@ using Liverpool.Models;
 
 namespace Liverpool.Controllers
 {
-    public class TypesController : Controller
+    public class SizesController : Controller
     {
         private LiverpoolContext db = new LiverpoolContext();
 
-        // GET: Types
+        // GET: Sizes
         public ActionResult Index()
         {
-            return View(db.Types.ToList());
+            return View(db.Sizes.ToList());
         }
 
-        // GET: Types/Details/5
+        // GET: Sizes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Type type = db.Types.Find(id);
-            if (type == null)
+            Size size = db.Sizes.Find(id);
+            if (size == null)
             {
                 return HttpNotFound();
             }
-            return View(type);
+            return View(size);
         }
 
-        // GET: Types/Create
+        // GET: Sizes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Types/Create
+        // POST: Sizes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "typeid,typeName,Sex")] Type type)
+        public ActionResult Create([Bind(Include = "SizeID,SizeName,SizeChar")] Size size)
         {
             if (ModelState.IsValid)
             {
-                db.Types.Add(type);
+                db.Sizes.Add(size);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(type);
+            return View(size);
         }
 
-        // GET: Types/Edit/5
+        // GET: Sizes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Type type = db.Types.Find(id);
-            if (type == null)
+            Size size = db.Sizes.Find(id);
+            if (size == null)
             {
                 return HttpNotFound();
             }
-            return View(type);
+            return View(size);
         }
 
-        // POST: Types/Edit/5
+        // POST: Sizes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "typeid,typeName,Sex")] Type type)
+        public ActionResult Edit([Bind(Include = "SizeID,SizeName,SizeChar")] Size size)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(type).State = EntityState.Modified;
+                db.Entry(size).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(type);
+            return View(size);
         }
 
-        // GET: Types/Delete/5
+        // GET: Sizes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Type type = db.Types.Find(id);
-            if (type == null)
+            Size size = db.Sizes.Find(id);
+            if (size == null)
             {
                 return HttpNotFound();
             }
-            return View(type);
+            return View(size);
         }
 
-        // POST: Types/Delete/5
+        // POST: Sizes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Type type = db.Types.Find(id);
-            db.Types.Remove(type);
+            Size size = db.Sizes.Find(id);
+            db.Sizes.Remove(size);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

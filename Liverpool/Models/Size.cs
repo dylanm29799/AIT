@@ -6,20 +6,21 @@ using System.Web;
 
 namespace Liverpool.Models
 {
-    public class Brand
+    public class Size
     {
         private ICollection<Clothing> _clothing;
 
-        public Brand()
+        public Size()
         {
             _clothing = new List<Clothing>();
         }
 
         [Key]
-        public int BrandID { get; set; }
-        public string Name { get; set; }
+        public int SizeID { get; set; }
+        public string SizeName { get; set; }
+        public string SizeChar { get; set; }
+        
 
-        public string Info { get; set; } 
 
         public virtual ICollection<Clothing> Clothings
         {

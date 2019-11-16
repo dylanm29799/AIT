@@ -10,107 +10,107 @@ using Liverpool.Models;
 
 namespace Liverpool.Controllers
 {
-    public class ProductInfoesController : Controller
+    public class ExtrasController : Controller
     {
         private LiverpoolContext db = new LiverpoolContext();
 
-        // GET: ProductInfoes
+        // GET: Extras
         public ActionResult Index()
         {
-            return View(db.ProdInfo.ToList());
+            return View(db.Extrass.ToList());
         }
 
-        // GET: ProductInfoes/Details/5
+        // GET: Extras/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProductInfo productInfo = db.ProdInfo.Find(id);
-            if (productInfo == null)
+            Extras extras = db.Extrass.Find(id);
+            if (extras == null)
             {
                 return HttpNotFound();
             }
-            return View(productInfo);
+            return View(extras);
         }
 
-        // GET: ProductInfoes/Create
+        // GET: Extras/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ProductInfoes/Create
+        // POST: Extras/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "prodID,Price,Size")] ProductInfo productInfo)
+        public ActionResult Create([Bind(Include = "ExtraID,ExtraName,ExtraPrice")] Extras extras)
         {
             if (ModelState.IsValid)
             {
-                db.ProdInfo.Add(productInfo);
+                db.Extrass.Add(extras);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(productInfo);
+            return View(extras);
         }
 
-        // GET: ProductInfoes/Edit/5
+        // GET: Extras/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProductInfo productInfo = db.ProdInfo.Find(id);
-            if (productInfo == null)
+            Extras extras = db.Extrass.Find(id);
+            if (extras == null)
             {
                 return HttpNotFound();
             }
-            return View(productInfo);
+            return View(extras);
         }
 
-        // POST: ProductInfoes/Edit/5
+        // POST: Extras/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "prodID,Price,Size")] ProductInfo productInfo)
+        public ActionResult Edit([Bind(Include = "ExtraID,ExtraName,ExtraPrice")] Extras extras)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(productInfo).State = EntityState.Modified;
+                db.Entry(extras).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(productInfo);
+            return View(extras);
         }
 
-        // GET: ProductInfoes/Delete/5
+        // GET: Extras/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProductInfo productInfo = db.ProdInfo.Find(id);
-            if (productInfo == null)
+            Extras extras = db.Extrass.Find(id);
+            if (extras == null)
             {
                 return HttpNotFound();
             }
-            return View(productInfo);
+            return View(extras);
         }
 
-        // POST: ProductInfoes/Delete/5
+        // POST: Extras/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ProductInfo productInfo = db.ProdInfo.Find(id);
-            db.ProdInfo.Remove(productInfo);
+            Extras extras = db.Extrass.Find(id);
+            db.Extrass.Remove(extras);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

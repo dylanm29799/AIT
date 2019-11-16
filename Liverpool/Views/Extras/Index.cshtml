@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Liverpool.Models.Extras>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ExtraName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExtraPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExtraName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExtraPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ExtraID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ExtraID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ExtraID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -10,107 +10,107 @@ using Liverpool.Models;
 
 namespace Liverpool.Controllers
 {
-    public class InformationController : Controller
+    public class ClothingsController : Controller
     {
         private LiverpoolContext db = new LiverpoolContext();
 
-        // GET: Information
+        // GET: Clothings
         public ActionResult Index()
         {
-            return View(db.Information.ToList());
+            return View(db.Clothings.ToList());
         }
 
-        // GET: Information/Details/5
+        // GET: Clothings/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Information information = db.Information.Find(id);
-            if (information == null)
+            Clothing clothing = db.Clothings.Find(id);
+            if (clothing == null)
             {
                 return HttpNotFound();
             }
-            return View(information);
+            return View(clothing);
         }
 
-        // GET: Information/Create
+        // GET: Clothings/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Information/Create
+        // POST: Clothings/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IID,Name,Price")] Information information)
+        public ActionResult Create([Bind(Include = "ClothingID,Name,Price,Sex")] Clothing clothing)
         {
             if (ModelState.IsValid)
             {
-                db.Information.Add(information);
+                db.Clothings.Add(clothing);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(information);
+            return View(clothing);
         }
 
-        // GET: Information/Edit/5
+        // GET: Clothings/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Information information = db.Information.Find(id);
-            if (information == null)
+            Clothing clothing = db.Clothings.Find(id);
+            if (clothing == null)
             {
                 return HttpNotFound();
             }
-            return View(information);
+            return View(clothing);
         }
 
-        // POST: Information/Edit/5
+        // POST: Clothings/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IID,Name,Price")] Information information)
+        public ActionResult Edit([Bind(Include = "ClothingID,Name,Price,Sex")] Clothing clothing)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(information).State = EntityState.Modified;
+                db.Entry(clothing).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(information);
+            return View(clothing);
         }
 
-        // GET: Information/Delete/5
+        // GET: Clothings/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Information information = db.Information.Find(id);
-            if (information == null)
+            Clothing clothing = db.Clothings.Find(id);
+            if (clothing == null)
             {
                 return HttpNotFound();
             }
-            return View(information);
+            return View(clothing);
         }
 
-        // POST: Information/Delete/5
+        // POST: Clothings/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Information information = db.Information.Find(id);
-            db.Information.Remove(information);
+            Clothing clothing = db.Clothings.Find(id);
+            db.Clothings.Remove(clothing);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

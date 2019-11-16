@@ -16,9 +16,9 @@ namespace Liverpool.Models
         }
 
         public DbSet<Brand> Brands { get; set; }
-        public DbSet<Information> Information { get; set; }
-        public DbSet<ProductInfo> ProdInfo { get; set; }
-        public DbSet<Type> Types { get; set; }
+        public DbSet<Size> Sizes { get; set; }
+        public DbSet<Clothing> Clothings { get; set; }
+        public DbSet<Extras> Extrass { get; set; }
 
     }
 }

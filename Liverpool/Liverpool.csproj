@@ -183,20 +183,20 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BrandsController.cs" />
+    <Compile Include="Controllers\ClothingsController.cs" />
+    <Compile Include="Controllers\ExtrasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProductInfoesController.cs" />
-    <Compile Include="Controllers\TypesController.cs" />
+    <Compile Include="Controllers\SizesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
-    <Compile Include="Models\Information.cs" />
+    <Compile Include="Models\Size.cs" />
     <Compile Include="Models\LiverpoolModelContext.cs" />
-    <Compile Include="Models\ProductInfo.cs" />
-    <Compile Include="Models\TypeName.cs" />
+    <Compile Include="Models\Clothing.cs" />
+    <Compile Include="Models\Extras.cs" />
     <Compile Include="Models\LiverpoolSeeder.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -274,11 +274,26 @@
     <Content Include="Views\Types\Details.cshtml" />
     <Content Include="Views\Types\Edit.cshtml" />
     <Content Include="Views\Types\Index.cshtml" />
-    <Content Include="Views\ProductInfoes\Create.cshtml" />
-    <Content Include="Views\ProductInfoes\Delete.cshtml" />
-    <Content Include="Views\ProductInfoes\Details.cshtml" />
-    <Content Include="Views\ProductInfoes\Edit.cshtml" />
-    <Content Include="Views\ProductInfoes\Index.cshtml" />
+    <Content Include="Views\Clothing\Create.cshtml" />
+    <Content Include="Views\Clothing\Delete.cshtml" />
+    <Content Include="Views\Clothing\Details.cshtml" />
+    <Content Include="Views\Clothing\Edit.cshtml" />
+    <Content Include="Views\Clothing\Index.cshtml" />
+    <Content Include="Views\Clothings\Create.cshtml" />
+    <Content Include="Views\Clothings\Delete.cshtml" />
+    <Content Include="Views\Clothings\Details.cshtml" />
+    <Content Include="Views\Clothings\Edit.cshtml" />
+    <Content Include="Views\Clothings\Index.cshtml" />
+    <Content Include="Views\Extras\Create.cshtml" />
+    <Content Include="Views\Extras\Delete.cshtml" />
+    <Content Include="Views\Extras\Details.cshtml" />
+    <Content Include="Views\Extras\Edit.cshtml" />
+    <Content Include="Views\Extras\Index.cshtml" />
+    <Content Include="Views\Sizes\Create.cshtml" />
+    <Content Include="Views\Sizes\Delete.cshtml" />
+    <Content Include="Views\Sizes\Details.cshtml" />
+    <Content Include="Views\Sizes\Edit.cshtml" />
+    <Content Include="Views\Sizes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
