@@ -39,8 +39,7 @@
             @Html.DisplayFor(modelItem => item.Sex)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Image)
-            <img src=Media/modelItem.image/>
+            <img src="@Html.DisplayFor(modelItem => item.Image)" height="52" width="60"/>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ClothingID }) |

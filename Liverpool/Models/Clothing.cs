@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Liverpool.Models
 {
-    public class Clothing
+    public class Clothing 
     {
         private ICollection<Size> _size;
 

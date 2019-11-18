@@ -1,5 +1,6 @@
 ﻿@model Liverpool.Models.Clothing
 
+
 @{
     ViewBag.Title = "Details";
 }
@@ -10,38 +11,37 @@
     <h4>Clothing</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+       
+        
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Sex)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Sex)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Sex)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Sex)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
+            <dd>
+                <img src="@Html.DisplayFor(model => model.Image)" height="300" width="300" />
 
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-
+            </dd>
+        
     </dl>
 </div>
 <p>
