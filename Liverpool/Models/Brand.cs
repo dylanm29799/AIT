@@ -20,6 +20,7 @@ namespace Liverpool.Models
         public string Name { get; set; }
 
         public string Info { get; set; } 
+        public string Image { get; set; }
 
         public virtual ICollection<Clothing> Clothings
         {

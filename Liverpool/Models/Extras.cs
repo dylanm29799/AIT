@@ -19,6 +19,7 @@ namespace Liverpool.Models
         public int ExtraID { get; set; }
         public string ExtraName { get; set; }
         public int ExtraPrice { get; set; }
+        public string ExtraImage { get; set; }
        
 
 

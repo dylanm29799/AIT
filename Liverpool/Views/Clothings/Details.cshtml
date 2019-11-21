@@ -11,37 +11,38 @@
     <h4>Clothing</h4>
     <hr />
     <dl class="dl-horizontal">
-       
-        
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Price)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Price)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Sex)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Sex)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
 
-            <dd>
-                <img src="@Html.DisplayFor(model => model.Image)" height="300" width="300" />
+        <dt>
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
 
-            </dd>
-        
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+
+     
+        <dd>
+            <img src="@Url.Content(Model.Image)" height="300" width="300" />
+
+        </dd>
+
     </dl>
 </div>
 <p>
